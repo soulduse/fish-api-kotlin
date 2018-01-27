@@ -1,0 +1,10 @@
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+    "author": "테스터",
+    "title": "안녕하세요",
+    "content": "반가워요!"
+}
+
+###

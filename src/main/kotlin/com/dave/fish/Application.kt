@@ -2,10 +2,12 @@ package com.dave.fish
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing
 
+@EnableJpaAuditing
 @SpringBootApplication
-class SpringWebserviceWithKotlinApplication
+class Application
 
 fun main(args: Array<String>) {
-    SpringApplication.run(SpringWebserviceWithKotlinApplication::class.java, *args)
+    SpringApplication.run(Application::class.java, *args)
 }

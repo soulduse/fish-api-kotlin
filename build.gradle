@@ -1,20 +1,23 @@
+
 buildscript {
-	ext {
-		kotlinVersion = '1.2.10'
-		springBootVersion = '1.5.9.RELEASE'
-	}
+	apply from: file('dependencies.gradle')
+
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
-		classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+		classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+		classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
+		classpath "org.jetbrains.kotlin:kotlin-noarg:$kotlinVersion"
+		classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
 	}
 }
 
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
+apply plugin: 'kotlin-jpa'
+apply plugin: "kotlin-allopen"
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
@@ -32,14 +35,14 @@ repositories {
 	mavenCentral()
 }
 
+ext['hibernate.version'] = '5.2.11.Final'
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
-	compile("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-	runtime('com.h2database:h2')
-	compileOnly('org.projectlombok:lombok')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation('org.springframework.boot:spring-boot-starter-actuator')
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+	implementation('org.springframework.boot:spring-boot-starter-web')
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
+	implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
+	implementation('com.h2database:h2')
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
