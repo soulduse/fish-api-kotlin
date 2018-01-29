@@ -7,20 +7,26 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 /**
- * val 상수로 선언한 이유는 데이터 set을 막기 위함.
+ * private set : 외부 클래스에서 set을 막기 위함.
  */
 
 @Entity
-data class Posts(
-        @Id
-        @GeneratedValue
-        val id: Long = -1,
+class Posts: BaseTimeEntity{
+    @Id
+    @GeneratedValue
+    var id: Long = 0L
 
-        @Column(length = 500, nullable = false)
-        val title: String,
+    @Column(length = 500, nullable = false)
+    var title: String
 
-        @Column(columnDefinition = "TEXT", nullable = false)
-        val content: String,
+    @Column(columnDefinition = "TEXT", nullable = false)
+    var content: String
 
-        val author: String
-): BaseTimeEntity()
+    var author: String
+
+    constructor(title:String, content: String, author: String){
+        this.title = title
+        this.content = content
+        this.author = author
+    }
+}

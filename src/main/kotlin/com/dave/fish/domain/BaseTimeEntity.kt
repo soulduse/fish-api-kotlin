@@ -12,8 +12,10 @@ import javax.persistence.MappedSuperclass
 abstract class BaseTimeEntity {
 
     @CreatedDate
-    val createDate: LocalDateTime = LocalDateTime.now()
+    lateinit var createdDate: LocalDateTime
+        private set
 
     @LastModifiedDate
-    val modifiedDate: LocalDateTime = LocalDateTime.now()
+    lateinit var modifiedDate: LocalDateTime
+        private set
 }
