@@ -1,6 +1,6 @@
 
 buildscript {
-	apply from: file('dependencies.gradle')
+	apply from: file("dependencies.gradle")
 
 	repositories {
 		mavenCentral()
@@ -14,15 +14,15 @@ buildscript {
 	}
 }
 
-apply plugin: 'kotlin'
-apply plugin: 'kotlin-spring'
-apply plugin: 'kotlin-jpa'
+apply plugin: "kotlin"
+apply plugin: "kotlin-spring"
+apply plugin: "kotlin-jpa"
 apply plugin: "kotlin-allopen"
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
+apply plugin: "eclipse"
+apply plugin: "org.springframework.boot"
 
-group = 'com.dave'
-version = '0.0.1-SNAPSHOT'
+group = "com.dave"
+version = "0.0.1-SNAPSHOT"
 sourceCompatibility = 1.8
 compileKotlin {
 	kotlinOptions.jvmTarget = "1.8"
@@ -35,14 +35,15 @@ repositories {
 	mavenCentral()
 }
 
-ext['hibernate.version'] = '5.2.11.Final'
+ext["hibernate.version"] = "5.2.11.Final"
 
 dependencies {
-	implementation('org.springframework.boot:spring-boot-starter-actuator')
-	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-	implementation('org.springframework.boot:spring-boot-starter-web')
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}")
-	implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-	implementation('com.h2database:h2')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	implementation "org.springframework.boot:spring-boot-starter-actuator"
+	implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+	implementation "org.springframework.boot:spring-boot-starter-web"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
+	implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+	implementation "com.h2database:h2"
+	implementation "pl.allegro.tech.boot:handlebars-spring-boot-starter:$handlebarsVersion"
+	testImplementation "org.springframework.boot:spring-boot-starter-test"
 }

@@ -4,4 +4,6 @@ ext {
 
     // Spring
     springBootVersion = '1.5.9.RELEASE'
+
+    handlebarsVersion = "0.2.15"
 }
