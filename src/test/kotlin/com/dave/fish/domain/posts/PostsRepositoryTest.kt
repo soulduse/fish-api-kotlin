@@ -44,8 +44,7 @@ class PostsRepositoryTest{
         assertThat(posts.title, `is`("테스트 게시글"))
         assertThat(posts.content, `is`("테스트 본문"))
 
-        assertTrue(posts.createDate?.isAfter(now)!!)
-        assertTrue(posts.modifiedDate?.isAfter(now)!!)
-
+        assertTrue(posts.createdDate.isAfter(now))
+        assertTrue(posts.modifiedDate.isAfter(now))
     }
 }

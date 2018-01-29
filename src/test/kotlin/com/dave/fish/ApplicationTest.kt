@@ -12,5 +12,4 @@ class ApplicationTest {
 	@Test
 	fun contextLoads() {
 	}
-
 }
