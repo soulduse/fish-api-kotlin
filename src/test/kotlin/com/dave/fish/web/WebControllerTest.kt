@@ -23,11 +23,4 @@ class WebControllerTest {
         // then
         assertThat(body).contains("스프링부트로 시작하는 웹 서비스")
     }
-
-    @Test
-    fun 메인페이지_데이터_읽기(){
-        val body = this.restTemplate.getForObject("/", String::class.java)
-
-        assertThat(body).contains("test2@gmail.com")
-    }
 }
