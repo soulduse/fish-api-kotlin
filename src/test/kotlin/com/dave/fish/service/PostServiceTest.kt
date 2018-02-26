@@ -44,13 +44,4 @@ class PostServiceTest {
         assertThat(post.content == dto.content)
         assertThat(post.author == dto.author)
     }
-
-    @Test
-    fun 저장된_데이터를_읽어온다(){
-        // given
-        val post = postsService.findAllDesc().first()
-
-        assertThat(post.title == "테스트1")
-        assertThat(post.author == "test1@gmail.com")
-    }
 }
