@@ -3,7 +3,7 @@ ext {
     kotlinVersion = '1.2.21'
 
     // Spring
-    springBootVersion = '1.5.9.RELEASE'
+    springBootVersion = '1.5.10.RELEASE'
 
     handlebarsVersion = "0.2.15"
 }
