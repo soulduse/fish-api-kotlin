@@ -22,7 +22,7 @@ apply plugin: "eclipse"
 apply plugin: "org.springframework.boot"
 
 group = "com.dave"
-version = "0.0.3"
+version = "0.0.4"
 sourceCompatibility = 1.8
 compileKotlin {
 	kotlinOptions.jvmTarget = "1.8"
