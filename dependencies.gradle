@@ -1,6 +1,6 @@
 ext {
     // Kotlin
-    kotlinVersion = '1.2.10'
+    kotlinVersion = '1.2.21'
 
     // Spring
     springBootVersion = '1.5.9.RELEASE'
