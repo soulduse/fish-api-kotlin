@@ -23,4 +23,13 @@ class WebControllerTest {
         // then
         assertThat(body).contains("스프링부트로 시작하는 웹 서비스")
     }
+
+    @Test
+    fun Profile확인(){
+        // when
+        val profile = this.restTemplate.getForObject("/profile", String::class.java)
+
+        // then
+        assertThat(profile).isEqualTo("local")
+    }
 }
