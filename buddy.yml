@@ -1,0 +1,13 @@
+- pipeline: "production"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "master"
+  actions:
+    - action: "Upload files to Code Deploy"
+      type: "CODE_DEPLOY"
+      local_path: "/"
+      region: "ap-northeast-2"
+      description: "kotlin-api"
+      wait_for_finish_deployment: true
+      application_name: "springboot-webservice"
+      group_name: "springboot-webservice-group"
+      config_name: "CodeDeployDefault.OneAtATime"
